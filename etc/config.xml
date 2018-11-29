@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+		<twilio>
+			<api>
+				<sid/>
+				<token/>
+				<run_twiml_new_order/>
+				<order_twiml>
+					<![CDATA[<?xml version="1.0" encoding="UTF-8"?><Response><Message><Body>MessageTemplate!</Body</Message></Response>]]>
+				</order_twiml>
+				<run_twiml_new_invoice/>
+				<invoice_twiml>
+					<![CDATA[<?xml version="1.0" encoding="UTF-8"?><Response><Message><Body>MessageTemplate!</Body</Message></Response>]]>
+				</invoice_twiml>
+				<run_twiml_new_shipment/>
+				<shipment_twiml>
+					<![CDATA[<?xml version="1.0" encoding="UTF-8"?><Response><Message><Body>MessageTemplate!</Body</Message></Response>]]>
+				</shipment_twiml>
+			</api>
+		</twilio>
+	</default>
+</config>

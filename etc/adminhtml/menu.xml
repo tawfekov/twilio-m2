@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add action="twilio_notification/cron/index" id="Twilio_Notification::twilio_notification_cron" module="Twilio_Notification" parent="Twilio::top_level" resource="Magento_Backend::content" sortOrder="9999" title="Twilio Notfications"/>
+		<add id="Twilio::top_level" module="Twilio_Notification" resource="Magento_Backend::content" sortOrder="9999" title="Twilio"/>
+	</menu>
+</config>

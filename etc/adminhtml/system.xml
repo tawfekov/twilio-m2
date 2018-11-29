@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<section id="twilio" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+			<label>Twilio Notifications</label>
+			<tab>sales</tab>
+			<resource>Twilio_Notification::config_twilio_notification</resource>
+			<group id="api" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+				<comment><![CDATA[Need an SID,Token ? please refer to <a href="https://www.twilio.com/" target="_blank">Twilio</a> for step-by-step instructions]]></comment>
+				<label>API</label>
+				<field id="sid" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text">
+					<label>SID</label>
+				</field>
+				<field id="token" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text">
+					<label>Token</label>
+					<comment/>
+				</field>
+				<field id="record" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select">
+					<label>Record calls ?</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+			</group>
+			<group id="notifications" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+				<label>Notifications</label>
+				<field id="from" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text">
+					<label>Twilio From Number</label>
+					<comment>you should enter a number that you bought</comment>
+				</field>
+				<field id="run_twiml_new_order" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select">
+					<label>Run TwiML on New Order</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="order_twiml" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="textarea">
+					<label>Order  TwiML</label>
+					<comment>link to demo TwiML</comment>
+					<depends>
+						<field id="run_twiml_new_order">1</field>
+					</depends>
+				</field>
+				<field id="run_twiml_new_invoice" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select">
+					<label>Run TwiML on New Invoice</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="invoice_twiml" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="textarea">
+					<label>Invoice TwiML </label>
+					<comment>link to demo TwiML</comment>
+					<depends>
+						<field id="run_twiml_new_invoice">1</field>
+					</depends>
+				</field>
+				<field id="run_twiml_new_shipment" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select">
+					<label>Run TwiML on New Shipment</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field  id="shipment_twiml" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="textarea">
+					<label>Shipment TwiML </label>
+					<comment>link to demo TwiML</comment>
+					<depends>
+						<field id="run_twiml_new_shipment">1</field>
+					</depends>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>

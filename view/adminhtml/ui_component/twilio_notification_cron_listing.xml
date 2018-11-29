@@ -1,0 +1,115 @@
+<?xml version="1.0" ?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+	<argument name="data" xsi:type="array">
+		<item name="js_config" xsi:type="array">
+			<item name="provider" xsi:type="string">twilio_notification_cron_listing.twilio_notification_cron_listing_data_source</item>
+		</item>
+	</argument>
+	<settings>
+		<spinner>twilio_notification_cron_columns</spinner>
+		<deps>
+			<dep>twilio_notification_cron_listing.twilio_notification_cron_listing_data_source</dep>
+		</deps>
+	</settings>
+	<dataSource component="Magento_Ui/js/grid/provider" name="twilio_notification_cron_listing_data_source">
+		<settings>
+			<updateUrl path="mui/index/render"/>
+		</settings>
+		<aclResource>Twilio_Notification::Cron</aclResource>
+		<dataProvider class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider" name="twilio_notification_cron_listing_data_source">
+			<settings>
+				<requestFieldName>id</requestFieldName>
+				<primaryFieldName>cron_id</primaryFieldName>
+			</settings>
+		</dataProvider>
+	</dataSource>
+	<listingToolbar name="listing_top">
+		<settings>
+			<sticky>true</sticky>
+		</settings>
+		<bookmark name="bookmarks"/>
+		<columnsControls name="columns_controls"/>
+		<filters name="listing_filters">
+			<filterSelect name="status" provider="${ $.parentName }" component="Magento_Ui/js/form/element/ui-select" template="ui/grid/filters/elements/ui-select">
+				<settings>
+					<options class="Twilio\Notification\Model\Options\Status"/>
+					<caption translate="true">All Statuses</caption>
+					<label translate="true">Status</label>
+					<dataScope>status</dataScope>
+				</settings>
+			</filterSelect>
+			<filterSelect name="type" provider="${ $.parentName }" component="Magento_Ui/js/form/element/ui-select" template="ui/grid/filters/elements/ui-select">
+				<settings>
+					<options class="Twilio\Notification\Model\Options\Type"/>
+					<caption translate="true">All Types</caption>
+					<label translate="true">Type</label>
+					<dataScope>type</dataScope>
+				</settings>
+			</filterSelect>
+		</filters>
+		<paging name="listing_paging"/>
+	</listingToolbar>
+	<columns name="twilio_notification_cron_columns">
+		<selectionsColumn name="ids">
+			<settings>
+				<indexField>cron_id</indexField>
+			</settings>
+		</selectionsColumn>
+		<column name="cron_id">
+			<settings>
+				<filter>text</filter>
+				<sorting>asc</sorting>
+				<label translate="true">ID</label>
+			</settings>
+		</column>
+		<column name="target_id">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Increment ID</label>
+			</settings>
+		</column>
+		<column name="number">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Number</label>
+			</settings>
+		</column>
+		<column name="type">
+			<settings>
+				<label translate="true">Type</label>
+			</settings>
+		</column>
+		<column name="markup">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Markup</label>
+			</settings>
+		</column>
+		<column name="status">
+			<settings>
+				<dataType>text</dataType>
+				<sortable>false</sortable>
+				<label translate="true">Status</label>
+			</settings>
+		</column>
+		<column name="response">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">API Response</label>
+			</settings>
+		</column>
+		<column name="created_at">
+			<settings>
+				<filter>datetime</filter>
+				<label translate="true">Created at</label>
+			</settings>
+		</column>
+		<column name="processed_at">
+			<settings>
+				<filter>datetime</filter>
+				<label translate="true">Processed at</label>
+			</settings>
+		</column>
+
+	</columns>
+</listing>

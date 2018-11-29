@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+	<acl>
+		<resources>
+			<resource id="Magento_Backend::admin">
+				<resource id="Twilio_Notification::Cron" sortOrder="10" title="Cron">
+					<resource id="Twilio_Notification::Cron_save" sortOrder="10" title="Save Cron"/>
+					<resource id="Twilio_Notification::Cron_delete" sortOrder="20" title="Delete Cron"/>
+					<resource id="Twilio_Notification::Cron_update" sortOrder="30" title="Update Cron"/>
+					<resource id="Twilio_Notification::Cron_view" sortOrder="40" title="View Cron"/>
+				</resource>
+				<resource id="Magento_Backend::stores">
+					<resource id="Magento_Backend::stores_settings">
+						<resource id="Magento_Config::config">
+							<resource id="Twilio_Notification::config_twilio_notification" title="twilio"/>
+						</resource>
+					</resource>
+				</resource>
+			</resource>
+		</resources>
+	</acl>
+</config>

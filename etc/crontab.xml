@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+	<group id="default">
+		<job instance="Twilio\Notification\Cron\Twilio" method="execute" name="twilio_notification_twilio">
+			<schedule>* * * * *</schedule>
+		</job>
+	</group>
+</config>
